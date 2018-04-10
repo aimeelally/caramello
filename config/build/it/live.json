@@ -1,0 +1,16 @@
+{
+	"baseUrl": "@TODO add url live",
+	"version": "it",
+	"videosUrl":{
+		"atoms": "https://s3-eu-west-1.amazonaws.com/cdn.adaptemy.com/videos/newton/live/it/the-atomic-structure.mp4",
+		"isotopes": "https://s3-eu-west-1.amazonaws.com/cdn.adaptemy.com/videos/newton/live/it/isotopes.mp4",
+		"molecules": "https://s3-eu-west-1.amazonaws.com/cdn.adaptemy.com/videos/newton/live/it/molecules.mp4",
+		"sinkingFlotation": "https://s3-eu-west-1.amazonaws.com/cdn.adaptemy.com/videos/newton/live/it/the-atomic-structure.mp4",
+		"sl":{
+ 	 	  "atoms": "https://s3-eu-west-1.amazonaws.com/cdn.adaptemy.com/videos/newton/live/it/the-atomic-structure.mp4",
+ 	 	  "isotopes": "https://s3-eu-west-1.amazonaws.com/cdn.adaptemy.com/videos/newton/live/it/isotopes.mp4",
+ 	 	  "molecules": "https://s3-eu-west-1.amazonaws.com/cdn.adaptemy.com/videos/newton/live/it/molecules.mp4",
+ 	 	  "sinkingFlotation": "https://s3-eu-west-1.amazonaws.com/cdn.adaptemy.com/videos/newton/live/it/the-atomic-structure.mp4" 	 	  
+	 	}
+	 }
+}
