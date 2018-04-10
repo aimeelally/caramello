@@ -2,40 +2,37 @@
 angular.module("camelCaser", [])
 	.component("camelCaser", {
 		template: require("./camel-caser.html"), 
-		controller: [ '$timeout',
-			function CamelCaserController($timeout) {
+		controller: [ '$timeout', '$scope',
+			function CamelCaserController($timeout, $scope) {
 				
-        var that = this;
+        $scope.inputText = '';
+        $scope.outputText = '';
 
-        $timeout(function() {
-          that.showSidePanel = true;
-        },1); 
-
-        var colorWell
-        var defaultColor = "#0000ff";
-
-        window.addEventListener("load", startup, false);
-        function startup() {
-          colorWell = document.querySelector("#colorWell");
-          colorWell.value = defaultColor;
-          colorWell.addEventListener("input", updateFirst, false);
-          colorWell.addEventListener("change", updateAll, false);
-          colorWell.select();
+        $scope.submit = function() {
+          getObj($scope.inputText);
         }
-        function updateFirst(event) {
-          var el = document.querySelector(".modify-primary-color");
 
-          if (el) {
-            el.style.background = event.target.value;
-          }
+        function getObj(str) {
+          var output = stripSpacesAndCapitalise(str);
+          $scope.outputText = stripSpecialCharacters(output);
 
-        }function updateAll(event) {
-          document.querySelectorAll(".modify-primary-color").forEach(function(el) {
-            el.style.background = event.target.value;
-          });
+          return $scope.outputText;
+        }
+
+        function stripSpacesAndCapitalise(str) {
+          return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, 
+            function(match, index) {
+              if (+match === 0) return ""; // or if (/\s+/.test(match)) for white spaces
+              return index === 0 ? match.toLowerCase() : match.toUpperCase();
+            });
+        }
+
+        function stripSpecialCharacters(str) {
+          return str.replace(/([!@#$%\/^&-._,*])/g, "");
         }
 
 			}
 		]
 	});
 	
+  //([!@#$%\/^&._,*])
