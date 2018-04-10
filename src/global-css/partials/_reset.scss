@@ -20,30 +20,10 @@ html, body {
 @viewport { 
   initial-scale: 1;
 }
-#learn-page .question-area *, #learn-page .solution-area *{
-  box-sizing: content-box;
-  // table{
-  //   //margin-left:1.5em;
-  //   display: table;
-  //   border-collapse: separate;
-  //   border-spacing: 0;
-  //   border-color: grey;
-  // }
-  /*
-    @sass-fix
 
-  table[Attributes Style] {
-    border-top-width: 1px;
-    border-right-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-spacing: 1px;
-  }
-  */
-}
- // http://meyerweb.com/eric/tools/css/reset/ 
- //   v2.0 | 20110126
- //   License: none (public domain)
+// http://meyerweb.com/eric/tools/css/reset/ 
+//   v2.0 | 20110126
+//   License: none (public domain)
 
 
 html, body, div, span, applet, object, iframe,
