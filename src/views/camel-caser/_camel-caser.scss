@@ -6,14 +6,22 @@
 
 	textarea {
 		min-height: 200px;
+    border: transparent;
+    background: #E5ECE9;
 	}
 
 	pre {
+    background: #E5ECE9;
     white-space: pre-wrap;       /* Since CSS 2.1 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
     white-space: -pre-wrap;      /* Opera 4-6 */
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 	}
+
+  #copyArea {
+    position: absolute;
+    left: -500px;
+  }
 
 }

@@ -25,13 +25,14 @@ angular.module("camelCaser", [])
           $scope.outputText = strip($scope.inputText);
         }
 
-       /* init();
+        $scope.copyToClipboard = function(val) {
 
-        function init() {
-          var input = TEST;
-          //debugger;
-          var test = createMultilineObject(input);
-        }*/
+          var copyText = document.getElementById('copyArea');
+          copyText.select();
+          document.execCommand("Copy");
+          alert("Copied the text: " + copyText.value);
+
+        }
 
         function strip(str) {
           
@@ -113,7 +114,7 @@ angular.module("camelCaser", [])
 
           },{});
 
-          return JSON.stringify(newObj, undefined, 4);
+          return JSON.stringify(newObj, undefined, 2);
           
 
         }

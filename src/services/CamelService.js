@@ -12,10 +12,6 @@ export default [function(){
               };
 
 
-  /*function stripHTML(str) {
-    return str.replace(/(<([^>]+)>)/ig,"\n");
-  }*/
-
   function stripHTML(str) {
     var strippedHTML = str.replace(/(<([^>]+)>)/ig,"\n");
     var stripDoubleBrackets = strippedHTML.replace(/({{.+}})/g,"\n").trim();
@@ -25,15 +21,9 @@ export default [function(){
 
   function getArrayOfTextFromStrippedHtml(strippedHtml) {
     var arrayOfSentencesSplitAtNewLine = strippedHtml.replace(/\s\s+/g, "\n").split(/\r?\n/);
-    
+ 
     return arrayOfSentencesSplitAtNewLine;
   }
-
-  /*function stripHTML(str) {
-    var initialStrip = str.replace(/(<([^>]+)>)/ig, "REMOVE");
-    initialStrip.replace(/(REMOVE)+/g, "");
-    return initialStrip;
-  }*/
 
   function convertToCamelCase(str) {
     return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, 
@@ -53,7 +43,7 @@ export default [function(){
   }
 
   function stripSpecialCharacters(str) {
-    return str.replace(/([{}\[\]|=#!@:;#$%\/^&-._,*])/g, "");
+    return str.replace(/([{}\[\]|=#!@:;#$%\/\"\'^&-._,*])/g, "");
   }
 
  

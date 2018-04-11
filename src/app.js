@@ -22,7 +22,6 @@ angular
     "pascalprecht.translate",
 
     //MISC
-    "designSystem",
     "camelCaser"
 
   ])

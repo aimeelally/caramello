@@ -10,99 +10,26 @@ $color-neutral-5:#a1a1a1;
 $color-neutral-6:#666666;
 $color-neutral-7:#dddddd;
 
-//color 1,3,2 primary,secondary,div-headers,table-headers
-$color-1:#f75914;
-$color-1-hover:#fe5684;
-$color-2:#1caff6;
-$color-2-hover:#1d94fc;
-$color-3:#444444;
-$color-4:#FE5198;
-$color-5-hover:#FF824D;
-$color-4-hover:#FE84A2;
+$background-color: white;
 
-//strands
-$color-strand-1:#a884ba;
-$color-strand-2:#eb5a4b;
-$color-strand-3:#FBC830;
-$color-strand-4:#99D240;
-$color-strand-5:#03AC8B;
-$color-strand-list:($color-strand-1,$color-strand-2,$color-strand-3,$color-strand-4,$color-strand-5);
 
-//loading icon
-$color-line-1:#a884ba;
-$color-line-2:#eb5a4b;
-$color-line-3:#FBC830;
-$color-line-4:#99D240;
-$color-line-5:#03AC8B;
+// #247BA0
+// #70C1B3
+// #B2DBBF
+// #F3FFBD
+// #FF1654
 
-//teacher/student icons
-$color-teacher:#1dadfc;
-$color-student:#99D240;
-
-//assignments metrics complete-late,complete,in-progress,not-started
-$color-assignment-completelate:#618529;
-$color-assignment-complete:#99D240;
-$color-assignment-inprogress:#FBC830;
-$color-assignment-notstarted:#f3f3f3;
-
-//grades 1,2,3,0
-$color-grade-1:#03AC8B;
-$color-grade-2:#FBC830;
-$color-grade-3:#a884ba;
-$color-grade-0:#ffffff; 
-
-//metrics time,concepts,skillpoints,sparks
-$color-metric-time:#FBC830;
-$color-metric-concepts:#1dadfc;
-$color-metric-skillpoints:#99D240;
-$color-metric-sparks:#eb5a4b;
-
-//footer icons
-$color-footer-icon:#a1a1a1;
+$color-1: #F90093;
+$color-1-hover: #C60F7B;
+$color-2: #969A97;
+$color-2-hover: #D6D1CD;
+$color-3: #969A97;
 
 //alert & success
-$color-alert:#eb5a4b;
-$color-success:#99D240;
+$color-alert: #F90093;
+$color-success: #70C1B3;
 
-//subscription status
-$color-subscription-full:#99D240;
-$color-subscription-trial:#99D240;
-$color-subscription-expired:#eb5a4b;
 
-//payments process
-$color-payments-1:#FBC830;
-$color-payments-2:#fbd155;
-$color-payments-3:#fbdc80;
-$color-payments-4:#fbdc6e;
-
-//learn page
-$color-learnpg-current:#35A6DE;
-$color-learnpg-correct:#99D240;
-$color-learnpg-correct-text:#ffffff;
-$color-learnpg-incorrect:#eb5a4b;
-$color-learnpg-incorrect-text:#ffffff;
-$color-learnpg-hint:#FBC830;
-
-//live-class
-$color-live-working:#99D240;
-$color-live-browsing-site:#a884ba;
-$color-live-browsing-other:#FBC830;
-$color-live-logged-out:#989898;
-
-//SIMPLE POPUP
-$color-simple-popup-title: $color-1;
-
-//ASSIGNMENT PANEL
-$color-assignment: $color-1;
-
-//RECOMMENDATIONS
-$color-low-chance-pass: $color-3;
-$color-medium-chance-pass: $color-3;
-$color-high-chance-pass: $color-3;
-
-//PROFILE UPDATES
-$color-pw: #fbc830;
-$color-email: #a884ba;
 
 //******fonts******//
 
@@ -142,8 +69,8 @@ $grid-columns: 12;
 
 $header-height:100px;
 
-// breakpoints
+/* // breakpoints
 $breakpoint-small: "only screen and (min-width: 20em)";
-$breakpoint-medium: "only screen and (min-width: 30em)";
+$breakpoint-medium: "only screen and (min-width: 30em)"; */
 
 //$header-height: 100px;

@@ -13,3 +13,8 @@ This is the Caramello Camel Caser
 6. return result as object
 7. copy to clipboard
 8. remember my selections
+
+##Known issues
+- comments don't get parsed correctly because they have "<" symbols
+- if a parameter in the html has a ">" symbol e.g. ng-class="$ctrl.number > 4 'open' : 'closed'"
+  this also ends up in the output object

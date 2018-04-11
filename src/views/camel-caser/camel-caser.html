@@ -1,7 +1,8 @@
 <div id="camel-caser" class="span-12 padding-standard fancy-checkboxes">
-  <h1>Caramello Camel Caser</h1>
+  
+  <h1 class="span-12 padding-standard center-text">Caramello Camel Caser</h1>
 
-  <div class="span-4 margin-bottom">
+  <div class="span-4 md-screen margin-bottom">
       
     <div class="relative margin-bottom">
       <input
@@ -65,23 +66,33 @@
 
   </div>
 
-  <div class="white-bg span-8 padding-standard">
+  <div class="span-8 md-screen">
 
     <textarea 
       ng-model="inputText"
       class="span-12 padding-standard margin-bottom">
     </textarea>
-    <button 
-      ng-click="startStrip()"
-      class="btn-2 margin-bottom">
-      Do it!
-    </button>
-    <!-- <textarea 
-      ng-if="outputText"
-      ng-model="outputText"
-      class="span-12 padding-standard">
-    </textarea> -->
-    <pre 
+    
+    <div class="span-12">
+      <button 
+        ng-click="startStrip()"
+        class="btn-1 center-horizontally margin-bottom">
+        Do it!
+      </button>
+      
+      <button 
+        class="btn-4 block center-horizontally margin-bottom" 
+        ng-if="outputText"
+        ng-click="copyToClipboard()">
+        Copy to clipboard
+      </button>
+    </div>
+    
+    <textarea 
+      ng-model="outputText" 
+      id="copyArea">
+    </textarea>
+    <pre
       ng-if="outputText"
       class="span-12 padding-standard">{{outputText}}</pre>
 
