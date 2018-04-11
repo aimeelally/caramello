@@ -13079,7 +13079,7 @@ angular.module('directives', []).directive('sampleDirective', __WEBPACK_IMPORTED
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base_scss__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base_scss__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__base_scss__);
 // Proprietary
 
@@ -13115,11 +13115,14 @@ angular.module('services', []).service('SampleService', __WEBPACK_IMPORTED_MODUL
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__design_system_DesignSystemController__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__design_system_DesignSystemController__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__design_system_DesignSystemController___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__design_system_DesignSystemController__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__camel_caser_CamelCaserController__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__camel_caser_CamelCaserController___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__camel_caser_CamelCaserController__);
 
 
 //MISC
+
 
 
 
@@ -51008,7 +51011,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module("skeletonApp", ["ngRoute", "ui.router", "services", "directives", "mp.autoFocus", "jtcraddock.simplePopup", "pascalprecht.translate", "configjson",
 
 //MISC
-"designSystem"]).config(["$locationProvider", "$routeProvider", "$stateProvider", "$urlRouterProvider", function config($locationProvider, $routeProvider, $stateProvider, $urlRouterProvider) {
+"designSystem", "camelCaser"]).config(["$locationProvider", "$routeProvider", "$stateProvider", "$urlRouterProvider", function config($locationProvider, $routeProvider, $stateProvider, $urlRouterProvider) {
 
   $locationProvider.hashPrefix("!");
   $urlRouterProvider.when("", '/camel-caser');
@@ -51110,8 +51113,88 @@ function sampleDirective() {
 "use strict";
 
 
+angular.module("camelCaser", []).component("camelCaser", {
+  template: __webpack_require__(106),
+  controller: ['$timeout', '$scope', function CamelCaserController($timeout, $scope) {
+
+    var loremIpsum = "Lorem ip-sum, adipiscing elit.";
+
+    $scope.stripWhiteSpace = false;
+    $scope.stripSpecialCharacters = false;
+    $scope.stripNumbers = false;
+    $scope.stripHTML = false;
+
+    $scope.returnAsObject = false;
+    $scope.inputText = '';
+    $scope.outputText = '';
+
+    $scope.startStrip = function () {
+      $scope.outputText = strip($scope.inputText);
+    };
+
+    function strip(str) {
+      var outputText = str;
+
+      if ($scope.stripHTML) {
+        outputText = stripHTML(outputText);
+      }
+
+      if ($scope.stripWhiteSpace) {
+        outputText = stripSpacesAndCapitalise(outputText);
+      }
+
+      if ($scope.stripSpecialCharacters) {
+        outputText = stripSpecialCharacters(outputText);
+      }
+
+      if ($scope.stripNumbers) {
+        // add function
+      }
+
+      if ($scope.returnAsObject) {
+        outputText = turnInputAndOutputIntoObect($scope.inputText, outputText);
+      }
+
+      return outputText;
+    }
+
+    function stripHTML(str) {
+      return str.replace(/(<([^>]+)>)/ig, "");
+    }
+
+    function stripSpacesAndCapitalise(str) {
+      return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
+        if (+match === 0) return ""; // or if (/\s+/.test(match)) for white spaces
+        // lowercases first letter
+        return index === 0 ? match.toLowerCase() : match.toUpperCase();
+      });
+    }
+
+    function capitaliseFirstLetter(str) {
+      return str.replace(/^[a-z]/, u => u.toUpperCase());
+    }
+
+    function stripSpecialCharacters(str) {
+      return str.replace(/([!@:;#$%\/^&-._,*])/g, "");
+    }
+
+    function turnInputAndOutputIntoObect(input, output) {
+      return `"${[output]}\": \"${input}"`;
+    }
+  }]
+});
+
+//([!@#$%\/^&._,*])
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 angular.module("designSystem", []).component("designSystem", {
-  template: __webpack_require__(105),
+  template: __webpack_require__(107),
   controller: ['$timeout', function DesignSystemController($timeout) {
 
     var that = this;
@@ -51146,13 +51229,19 @@ angular.module("designSystem", []).component("designSystem", {
 });
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 105 */
+/* 106 */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=camel-caser class=\"span-12 padding-standard fancy-checkboxes\"> <h1>Caramello Camel Caser</h1> <div class=\"span-4 margin-bottom\"> <div class=\"relative margin-bottom\"> <input id=stripWhiteSpace type=checkbox ng-model=stripWhiteSpace /> <label for=stripWhiteSpace></label> <label for=stripWhiteSpace>Strip Whitespace</label> </div> <div class=\"relative margin-bottom\"> <input id=stripSpecialCharacters type=checkbox ng-model=stripSpecialCharacters /> <label for=stripSpecialCharacters></label> <label for=stripSpecialCharacters>Strip Special Characters</label> </div> <div class=\"relative margin-bottom\"> <input id=stripHTML type=checkbox ng-model=stripHTML /> <label for=stripHTML></label> <label for=stripHTML>Strip HTML</label> </div> <div class=\"relative margin-bottom\"> <input id=returnAsObject type=checkbox ng-model=returnAsObject /> <label for=returnAsObject></label> <label for=returnAsObject>Return as object parameter</label> </div> </div> <div class=\"white-bg span-8 padding-standard\"> <textarea ng-model=inputText class=\"span-12 padding-standard margin-bottom\">\n    </textarea> <button ng-click=startStrip() class=\"btn-2 margin-bottom\"> Convert to camel case </button> <p ng-if=outputText class=\"span-12 padding-standard\"> {{outputText}} </p> </div> </div>";
+
+/***/ }),
+/* 107 */
 /***/ (function(module, exports) {
 
 module.exports = "<div id=design-system-page class=\"page-container span-12\"> <aside class=\"{{$ctrl.showSidePanel ? 'visible' : ''}} padding-standard\"> <div class=\"span-12 bubble-container\"> <speech-bubble bubble-content=\"Woo, a design system\"></speech-bubble> </div> <non-player-character></non-player-character> </aside> <main class=content-padding> <h1 class=\"span-12 center-text\"> Adaptemy Design System </h1> <h2 class=span-12>Modify Colours</h2> <div class=\"white-bg dark-font span-12 padding-standard margin-bottom\"> <label for=colorWell>Primary color:</label> <input type=color value=#066abe id=colorWell> </div> <h2 class=span-12>Buttons on a Light Background</h2> <div class=\"white-bg span-12 padding-standard margin-bottom\"> <button class=\"btn-1 modify-primary-color\">Button 1</button> <button class=btn-2>Button 2</button> <button class=btn-3>Button 3</button> <button class=btn-4>Button 4</button> </div> <h2 class=span-12>Buttons on a Dark Background</h2> <div class=\"dark-bg span-12 padding-standard margin-bottom\"> <button class=btn-5>Button 5</button> <button class=btn-6>Button 6</button> <button class=btn-7>Button 7</button> <button class=btn-8>Button 8</button> </div> <h2 class=span-12>Colour Palette - Primarys</h2> <div class=\"white-bg span-12 padding-standard margin-bottom\"> <div class=\"color-block color-1 modify-primary-color\">#066abe</div> <div class=\"color-block color-2\">#1dadfc</div> <div class=\"color-block color-3\">#444444</div> </div> <h2 class=span-12>Colour Palette - Neutrals</h2> <div class=\"white-bg span-12 padding-standard margin-bottom\"> <div class=\"color-block color-neutral-0\">#ffffff</div> <div class=\"color-block color-neutral-1\">#f2f2f2</div> <div class=\"color-block color-neutral-2\">#f3f3f3</div> <div class=\"color-block color-neutral-3\">#e2e2e2</div> <div class=\"color-block color-neutral-4\">#e9e9e9</div> <div class=\"color-block color-neutral-5\">#a1a1a1</div> <div class=\"color-block color-neutral-6\">#666666</div> <div class=\"color-block color-neutral-7\">#dddddd</div> </div> <h2 class=span-12>Colour Palette - Colours</h2> <div class=\"white-bg span-12 padding-standard margin-bottom\"> <div class=\"color-block color-strand-1\">#a884ba</div> <div class=\"color-block color-strand-2\">#eb5a4b</div> <div class=\"color-block color-strand-3\">#fbc830</div> <div class=\"color-block color-strand-4\">#99d240</div> <div class=\"color-block color-strand-5\">#03ac8b</div> </div> <h2 class=span-12>Text Stylings</h2> <div class=\"white-bg dark-font span-12 padding-standard margin-bottom\"> <h1>This is an example of a h1 heading. Here's some extra text to show new line separation.</h1> <hr> <h2>This is an example of a h2 heading. Here's some extra text to show new line separation.</h2> <hr> <h3>This is an example of a h3 heading. Here's some extra text to show new line separation.</h3> <hr> <h4>This is an example of a h4 heading. Here's some extra text to show new line separation.</h4> <hr> <h5>This is an example of a h5 heading. Here's some extra text to show new line separation.</h5> <hr> <h6>This is an example of a h6 heading. Here's some extra text to show new line separation.</h6> <hr> <p>This is an example of a paragraph. Lorem ipsum dolor sit amet, postea graeco vis an, ius ei liber ignota latine, eruditi ornatus ut usu. <i>This is an example of italic text inside paragraph.</i> Postea maiorum qui ei, cum sint regione mediocrem ea, sit ei nulla legere intellegat. Eum dicat errem populo ea. Ancillae gloriatur in nec. Modo fastidii eu vix.</p> <hr> <span class=block>This is an example of a span.</span> <hr> <em class=block>This an example of emphasis text.</em> <hr> <strong class=block>This is an example of strong text.</strong> <hr> <i class=block>This is an example of italic text.</i> <hr> </div> </main> </div>";

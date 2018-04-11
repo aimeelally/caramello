@@ -25,12 +25,22 @@
 
     <div class="relative margin-bottom">
       <input
+        id="stripHTML"
+        type="checkbox" 
+        ng-model="stripHTML"
+        />
+      <label for="stripHTML"></label>
+      <label for="stripHTML">Strip HTML</label>
+    </div>
+
+    <div class="relative margin-bottom">
+      <input
         id="returnAsObject"
         type="checkbox" 
         ng-model="returnAsObject"
         />
       <label for="returnAsObject"></label>
-      <label for="returnAsObject">Return as object</label>
+      <label for="returnAsObject">Return as object parameter</label>
     </div>
 
   </div>
@@ -39,8 +49,7 @@
 
     <textarea 
       ng-model="inputText"
-      class="span-12 padding-standard margin-bottom"
-      placeholder="{{inputPlaceholder}}">
+      class="span-12 padding-standard margin-bottom">
     </textarea>
     <button 
       ng-click="startStrip()"
@@ -53,8 +62,9 @@
       class="span-12 padding-standard">
     </textarea> -->
     <p 
+      ng-if="outputText"
       class="span-12 padding-standard">
-      {{outputText ? outputText : outputPlaceholder}}
+      {{outputText}}
     </p>
 
   </div>

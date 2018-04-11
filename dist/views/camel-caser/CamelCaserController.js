@@ -2,40 +2,80 @@
 angular.module("camelCaser", [])
 	.component("camelCaser", {
 		template: require("./camel-caser.html"), 
-		controller: [ '$timeout',
-			function CamelCaserController($timeout) {
+		controller: [ '$timeout', '$scope',
+			function CamelCaserController($timeout, $scope) {
 				
-        var that = this;
+        var loremIpsum = "Lorem ip-sum, adipiscing elit.";
 
-        $timeout(function() {
-          that.showSidePanel = true;
-        },1); 
+        $scope.stripWhiteSpace = false;
+        $scope.stripSpecialCharacters = false;
+        $scope.stripNumbers = false;
+        $scope.stripHTML = false;
 
-        var colorWell
-        var defaultColor = "#0000ff";
+        $scope.returnAsObject = false;
+        $scope.inputText = '';
+        $scope.outputText = '';
+        
 
-        window.addEventListener("load", startup, false);
-        function startup() {
-          colorWell = document.querySelector("#colorWell");
-          colorWell.value = defaultColor;
-          colorWell.addEventListener("input", updateFirst, false);
-          colorWell.addEventListener("change", updateAll, false);
-          colorWell.select();
+        $scope.startStrip = function() {
+          $scope.outputText = strip($scope.inputText);
         }
-        function updateFirst(event) {
-          var el = document.querySelector(".modify-primary-color");
 
-          if (el) {
-            el.style.background = event.target.value;
+        function strip(str) {
+          var outputText = str;
+
+          if ($scope.stripHTML) {
+            outputText = stripHTML(outputText);
           }
 
-        }function updateAll(event) {
-          document.querySelectorAll(".modify-primary-color").forEach(function(el) {
-            el.style.background = event.target.value;
-          });
+          if ($scope.stripWhiteSpace) {
+            outputText = stripSpacesAndCapitalise(outputText);
+          }
+
+          if ($scope.stripSpecialCharacters) {
+            outputText = stripSpecialCharacters(outputText);
+          }
+
+          if ($scope.stripNumbers) {
+            // add function
+          }
+
+          if ($scope.returnAsObject) {
+            outputText = turnInputAndOutputIntoObect($scope.inputText, outputText);
+          }
+
+          return outputText;
+
         }
+
+        function stripHTML(str) {
+          return str.replace(/(<([^>]+)>)/ig,"");
+        }
+
+        function stripSpacesAndCapitalise(str) {
+          return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, 
+            function(match, index) {
+              if (+match === 0) return ""; // or if (/\s+/.test(match)) for white spaces
+              // lowercases first letter
+              return index === 0 ? match.toLowerCase() : match.toUpperCase();
+            });
+        }
+
+        function capitaliseFirstLetter(str) {
+          return str.replace(/^[a-z]/, (u) => u.toUpperCase());
+        }
+
+        function stripSpecialCharacters(str) {
+          return str.replace(/([!@:;#$%\/^&-._,*])/g, "");
+        }
+
+        function turnInputAndOutputIntoObect(input, output) {
+          return `"${[output]}\": \"${input}"`;
+        }
+
 
 			}
 		]
 	});
 	
+  //([!@#$%\/^&._,*])

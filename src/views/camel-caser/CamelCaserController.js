@@ -5,119 +5,73 @@ angular.module("camelCaser", [])
 		controller: [ '$timeout', '$scope',
 			function CamelCaserController($timeout, $scope) {
 				
-        $scope.stripWhiteSpace = true;
-        $scope.stripSpecialCharacters = true;
-        $scope.returnAsObject = true;
+        var loremIpsum = "Lorem ip-sum, adipiscing elit.";
+
+        $scope.stripWhiteSpace = false;
+        $scope.stripSpecialCharacters = false;
+        $scope.stripNumbers = false;
+        $scope.stripHTML = false;
+
+        $scope.returnAsObject = false;
         $scope.inputText = '';
         $scope.outputText = '';
-        // $scope.inputPlaceholder = '';
-        // $scope.ouputPlaceholder = '';
-
-        var loremIpsum = "Lorem ip-sum, adipiscing elit.";
+        
 
         $scope.startStrip = function() {
           $scope.outputText = strip($scope.inputText);
         }
 
-        init();
+        function strip(str) {
+          var outputText = str;
 
-        function init() {
-          $scope.inputPlaceholder = getInputPlaceholder();
-          $scope.outputPlaceholder = getOutputPlaceholder();
+          if ($scope.stripHTML) {
+            outputText = stripHTML(outputText);
+          }
+
+          if ($scope.stripWhiteSpace) {
+            outputText = stripSpacesAndCapitalise(outputText);
+          }
+
+          if ($scope.stripSpecialCharacters) {
+            outputText = stripSpecialCharacters(outputText);
+          }
+
+          if ($scope.stripNumbers) {
+            // add function
+          }
+
+          if ($scope.returnAsObject) {
+            outputText = turnInputAndOutputIntoObect($scope.inputText, outputText);
+          }
+
+          return outputText;
+
         }
 
-        function strip(str) {
-          
-          // if nothing selected
-          if (!$scope.stripWhiteSpace && 
-              !$scope.stripSpecialCharacters && 
-              !$scope.returnAsObject) {
-            
-            // do nothing
-            return $scope.inputText;
-          } 
-
-          // if strip white space AND strip special chars
-          if ($scope.stripWhiteSpace && $scope.stripSpecialCharacters) {
-            // if return as object
-            if ($scope.returnAsObject) {
-              // return as object
-              var output = stripSpacesAndCapitalise(str);
-              output = stripSpecialCharacters(output);
-
-              return turnInputAndOutputIntoObect($scope.inputText, output);
-
-            }
-              
-            // strip whitespace
-            // strip special chars
-            var output = stripSpacesAndCapitalise(str);
-            return stripSpecialCharacters(output);            
-            
-          }
-
-          // if strip white spaces
-          if ($scope.stripWhiteSpace) {
-            // strip white spaces
-            return stripSpacesAndCapitalise(str);
-          }
-            
-
-          // if strip special chars
-          if ($scope.stripSpecialCharacters) {
-            // strip special chars
-            return stripSpecialCharacters(str);
-          } 
-
+        function stripHTML(str) {
+          return str.replace(/(<([^>]+)>)/ig,"");
         }
 
         function stripSpacesAndCapitalise(str) {
           return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, 
             function(match, index) {
               if (+match === 0) return ""; // or if (/\s+/.test(match)) for white spaces
+              // lowercases first letter
               return index === 0 ? match.toLowerCase() : match.toUpperCase();
             });
         }
 
+        function capitaliseFirstLetter(str) {
+          return str.replace(/^[a-z]/, (u) => u.toUpperCase());
+        }
+
         function stripSpecialCharacters(str) {
-          return str.replace(/([!@#$%\/^&-._,*])/g, "");
+          return str.replace(/([!@:;#$%\/^&-._,*])/g, "");
         }
 
         function turnInputAndOutputIntoObect(input, output) {
-          return {
-            [output]: input
-          };
+          return `"${[output]}\": \"${input}"`;
         }
-
-
-        function getInputPlaceholder() {
-          // if ($scope.stripWhiteSpace && $scope.stripSpecialCharacters && $scope.returnAsObject) {
-          //   return loremIpsum;
-          // }
-          return loremIpsum;
-        }
-
-        function getOutputPlaceholder() {
-          if ($scope.stripWhiteSpace && $scope.stripSpecialCharacters && $scope.returnAsObject) {
-            var output = stripSpacesAndCapitalise(loremIpsum);
-            output = stripSpecialCharacters(output);
-            return turnInputAndOutputIntoObect(loremIpsum, output);
-          }
-          else if ($scope.stripWhiteSpace && $scope.stripSpecialCharacters) {
-            var output = stripSpacesAndCapitalise(loremIpsum);
-            return stripSpecialCharacters(output);
-          }
-          else if ($scope.stripSpecialCharacters) {
-            return stripSpecialCharacters(loremIpsum);
-          }
-          else {
-            return stripWhiteSpace(loremIpsum);
-          }
-        }
-
-
-
-
 
 
 			}
