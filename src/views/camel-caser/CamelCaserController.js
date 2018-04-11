@@ -1,18 +1,22 @@
 "use strict";
+
+import TEST from "./camel-caser.html";
+
 angular.module("camelCaser", [])
 	.component("camelCaser", {
 		template: require("./camel-caser.html"), 
-		controller: [ '$timeout', '$scope',
-			function CamelCaserController($timeout, $scope) {
+		controller: [ '$scope', 'CamelService',
+			function CamelCaserController($scope, CamelService) {
 				
         var loremIpsum = "Lorem ip-sum, adipiscing elit.";
 
-        $scope.stripWhiteSpace = false;
+        $scope.standardCamelCaseConversion = false;
         $scope.stripSpecialCharacters = false;
         $scope.stripNumbers = false;
+        $scope.capitaliseFirstLetter = false;
         $scope.stripHTML = false;
-
         $scope.returnAsObject = false;
+        
         $scope.inputText = '';
         $scope.outputText = '';
         
@@ -21,56 +25,90 @@ angular.module("camelCaser", [])
           $scope.outputText = strip($scope.inputText);
         }
 
+       /* init();
+
+        function init() {
+          var input = TEST;
+          //debugger;
+          var test = createMultilineObject(input);
+        }*/
+
         function strip(str) {
+          
           var outputText = str;
 
           if ($scope.stripHTML) {
-            outputText = stripHTML(outputText);
+            outputText = CamelService.stripHTML(outputText);
           }
 
-          if ($scope.stripWhiteSpace) {
-            outputText = stripSpacesAndCapitalise(outputText);
+          if ($scope.standardCamelCaseConversion) {
+            outputText = CamelService.convertToCamelCase(outputText);
           }
 
           if ($scope.stripSpecialCharacters) {
-            outputText = stripSpecialCharacters(outputText);
+            outputText = CamelService.stripSpecialCharacters(outputText);
           }
 
           if ($scope.stripNumbers) {
-            // add function
+            outputText = CamelService.stripNumbers(outputText);
           }
 
-          if ($scope.returnAsObject) {
+          if ($scope.capitaliseFirstLetter) {
+            outputText = CamelService.capitaliseFirstLetter(outputText);
+          }
+
+          /*if ($scope.returnAsObject) {
             outputText = turnInputAndOutputIntoObect($scope.inputText, outputText);
+          }*/
+
+          if ($scope.returnAsObject) {
+            outputText = createMultilineObject(outputText);
           }
 
           return outputText;
 
         }
 
-        function stripHTML(str) {
-          return str.replace(/(<([^>]+)>)/ig,"");
-        }
 
-        function stripSpacesAndCapitalise(str) {
-          return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, 
-            function(match, index) {
-              if (+match === 0) return ""; // or if (/\s+/.test(match)) for white spaces
-              // lowercases first letter
-              return index === 0 ? match.toLowerCase() : match.toUpperCase();
-            });
-        }
-
-        function capitaliseFirstLetter(str) {
-          return str.replace(/^[a-z]/, (u) => u.toUpperCase());
-        }
-
-        function stripSpecialCharacters(str) {
-          return str.replace(/([!@:;#$%\/^&-._,*])/g, "");
-        }
+        
 
         function turnInputAndOutputIntoObect(input, output) {
-          return `"${[output]}\": \"${input}"`;
+          var prettyObject = {[output]: input}; 
+
+          return JSON.stringify(prettyObject, undefined, 2);
+        }
+
+        function createMultilineObject(input) {
+          
+          var cleanInput = CamelService.stripHTML(input);          
+          var arrayOfCleanInput = CamelService.getArrayOfTextFromStrippedHtml(cleanInput);
+          var newObj = {};
+
+          arrayOfCleanInput.reduce(function(curr,pre) {
+            
+            var key = pre;
+
+            if ($scope.standardCamelCaseConversion) {
+              key = CamelService.convertToCamelCase(key);
+            }
+            if ($scope.stripSpecialCharacters) {
+              key = CamelService.convertToCamelCase(key);
+            }
+            if ($scope.stripNumbers) {
+              key = CamelService.stripNumbers(key);
+            }
+            
+            if(newObj[key]) {
+              return;
+            }
+            newObj[key] = pre;
+            return newObj;
+
+          },{});
+
+          return JSON.stringify(newObj, undefined, 2);
+          
+
         }
 
 

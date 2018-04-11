@@ -50977,7 +50977,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__WEBPACK_IMPORTED_MODULE_0_angular___default.a.module("skeletonApp", ["ngRoute", "ui.router", "services", "directives", "mp.autoFocus", "jtcraddock.simplePopup", "pascalprecht.translate",
+__WEBPACK_IMPORTED_MODULE_0_angular___default.a.module("caramelloApp", ["ngRoute", "ui.router", "services", "directives", "mp.autoFocus", "jtcraddock.simplePopup", "pascalprecht.translate",
 
 //MISC
 "designSystem", "camelCaser"]).config(["$locationProvider", "$routeProvider", "$stateProvider", "$urlRouterProvider", function config($locationProvider, $routeProvider, $stateProvider, $urlRouterProvider) {
@@ -50994,7 +50994,7 @@ __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module("skeletonApp", ["ngRoute"
 }]);
 
 //Route Authorisation
-__WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('skeletonApp').run(['$rootScope', '$state', '$window', function ($rootScope, $state, $window) {}]);
+__WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('caramelloApp').run(['$rootScope', '$state', '$window', function ($rootScope, $state, $window) {}]);
 // /Route Authorisation
 
 /***/ }),
@@ -51056,9 +51056,10 @@ angular.module("camelCaser", []).component("camelCaser", {
 
     var loremIpsum = "Lorem ip-sum, adipiscing elit.";
 
-    $scope.stripWhiteSpace = false;
+    $scope.standardCamelCaseConversion = false;
     $scope.stripSpecialCharacters = false;
     $scope.stripNumbers = false;
+    $scope.capitaliseFirstLetter = false;
     $scope.stripHTML = false;
 
     $scope.returnAsObject = false;
@@ -51076,8 +51077,8 @@ angular.module("camelCaser", []).component("camelCaser", {
         outputText = stripHTML(outputText);
       }
 
-      if ($scope.stripWhiteSpace) {
-        outputText = stripSpacesAndCapitalise(outputText);
+      if ($scope.standardCamelCaseConversion) {
+        outputText = convertToCamelCase(outputText);
       }
 
       if ($scope.stripSpecialCharacters) {
@@ -51085,7 +51086,11 @@ angular.module("camelCaser", []).component("camelCaser", {
       }
 
       if ($scope.stripNumbers) {
-        // add function
+        outputText = stripNumbers(outputText);
+      }
+
+      if ($scope.capitaliseFirstLetter) {
+        outputText = capitaliseFirstLetter(outputText);
       }
 
       if ($scope.returnAsObject) {
@@ -51099,12 +51104,16 @@ angular.module("camelCaser", []).component("camelCaser", {
       return str.replace(/(<([^>]+)>)/ig, "");
     }
 
-    function stripSpacesAndCapitalise(str) {
+    function convertToCamelCase(str) {
       return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
         if (+match === 0) return ""; // or if (/\s+/.test(match)) for white spaces
         // lowercases first letter
         return index === 0 ? match.toLowerCase() : match.toUpperCase();
       });
+    }
+
+    function stripNumbers(str) {
+      return str.replace(/[0-9]/g, "");
     }
 
     function capitaliseFirstLetter(str) {
@@ -51116,7 +51125,14 @@ angular.module("camelCaser", []).component("camelCaser", {
     }
 
     function turnInputAndOutputIntoObect(input, output) {
-      return `"${[output]}\": \"${input}"`;
+      //var prettyObject = {[output]: input}; 
+
+      var prettyObject = {
+        "aime": "werwer",
+        "ret": "jkfiw"
+      };
+
+      return JSON.stringify(prettyObject, undefined, 2);
     }
   }]
 });
@@ -51175,7 +51191,7 @@ angular.module("designSystem", []).component("designSystem", {
 /* 103 */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=camel-caser class=\"span-12 padding-standard fancy-checkboxes\"> <h1>Caramello Camel Caser</h1> <div class=\"span-4 margin-bottom\"> <div class=\"relative margin-bottom\"> <input id=stripWhiteSpace type=checkbox ng-model=stripWhiteSpace /> <label for=stripWhiteSpace></label> <label for=stripWhiteSpace>Strip Whitespace</label> </div> <div class=\"relative margin-bottom\"> <input id=stripSpecialCharacters type=checkbox ng-model=stripSpecialCharacters /> <label for=stripSpecialCharacters></label> <label for=stripSpecialCharacters>Strip Special Characters</label> </div> <div class=\"relative margin-bottom\"> <input id=stripHTML type=checkbox ng-model=stripHTML /> <label for=stripHTML></label> <label for=stripHTML>Strip HTML</label> </div> <div class=\"relative margin-bottom\"> <input id=returnAsObject type=checkbox ng-model=returnAsObject /> <label for=returnAsObject></label> <label for=returnAsObject>Return as object parameter</label> </div> </div> <div class=\"white-bg span-8 padding-standard\"> <textarea ng-model=inputText class=\"span-12 padding-standard margin-bottom\">\n    </textarea> <button ng-click=startStrip() class=\"btn-2 margin-bottom\"> Convert to camel case </button> <p ng-if=outputText class=\"span-12 padding-standard\"> {{outputText}} </p> </div> </div>";
+module.exports = "<div id=camel-caser class=\"span-12 padding-standard fancy-checkboxes\"> <h1>Caramello Camel Caser</h1> <div class=\"span-4 margin-bottom\"> <div class=\"relative margin-bottom\"> <input id=standardCamelCaseConversion type=checkbox ng-model=standardCamelCaseConversion /> <label for=standardCamelCaseConversion></label> <label for=standardCamelCaseConversion>Convert to Camel Case</label> </div> <div class=\"relative margin-bottom\"> <input id=capitaliseFirstLetter type=checkbox ng-model=capitaliseFirstLetter /> <label for=capitaliseFirstLetter></label> <label for=capitaliseFirstLetter>Capitalise First Letter</label> </div> <div class=\"relative margin-bottom\"> <input id=stripSpecialCharacters type=checkbox ng-model=stripSpecialCharacters /> <label for=stripSpecialCharacters></label> <label for=stripSpecialCharacters>Strip Special Characters</label> </div> <div class=\"relative margin-bottom\"> <input id=stripNumbers type=checkbox ng-model=stripNumbers /> <label for=stripNumbers></label> <label for=stripNumbers>Strip Numbers</label> </div> <div class=\"relative margin-bottom\"> <input id=stripHTML type=checkbox ng-model=stripHTML /> <label for=stripHTML></label> <label for=stripHTML>Strip HTML</label> </div> <div class=\"relative margin-bottom\"> <input id=returnAsObject type=checkbox ng-model=returnAsObject /> <label for=returnAsObject></label> <label for=returnAsObject>Return as object parameter</label> </div> </div> <div class=\"white-bg span-8 padding-standard\"> <textarea ng-model=inputText class=\"span-12 padding-standard margin-bottom\">\n    </textarea> <button ng-click=startStrip() class=\"btn-2 margin-bottom\"> Do it! </button> <pre ng-if=outputText class=\"span-12 padding-standard\">\n      {{outputText}}\n    </pre> </div> </div>";
 
 /***/ }),
 /* 104 */

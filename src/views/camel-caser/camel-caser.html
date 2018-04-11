@@ -5,12 +5,22 @@
       
     <div class="relative margin-bottom">
       <input
-        id="stripWhiteSpace"
+        id="standardCamelCaseConversion"
         type="checkbox" 
-        ng-model="stripWhiteSpace"
+        ng-model="standardCamelCaseConversion"
         />
-      <label for="stripWhiteSpace"></label>
-      <label for="stripWhiteSpace">Strip Whitespace</label>
+      <label for="standardCamelCaseConversion"></label>
+      <label for="standardCamelCaseConversion">Convert to Camel Case</label>
+    </div>
+
+    <div class="relative margin-bottom">
+      <input
+        id="capitaliseFirstLetter"
+        type="checkbox" 
+        ng-model="capitaliseFirstLetter"
+        />
+      <label for="capitaliseFirstLetter"></label>
+      <label for="capitaliseFirstLetter">Capitalise First Letter</label>
     </div>
 
     <div class="relative margin-bottom">
@@ -21,6 +31,16 @@
         />
       <label for="stripSpecialCharacters"></label>
       <label for="stripSpecialCharacters">Strip Special Characters</label>
+    </div>
+
+    <div class="relative margin-bottom">
+      <input
+        id="stripNumbers"
+        type="checkbox" 
+        ng-model="stripNumbers"
+        />
+      <label for="stripNumbers"></label>
+      <label for="stripNumbers">Strip Numbers</label>
     </div>
 
     <div class="relative margin-bottom">
@@ -40,7 +60,7 @@
         ng-model="returnAsObject"
         />
       <label for="returnAsObject"></label>
-      <label for="returnAsObject">Return as object parameter</label>
+      <label for="returnAsObject">Return as object</label>
     </div>
 
   </div>
@@ -54,18 +74,16 @@
     <button 
       ng-click="startStrip()"
       class="btn-2 margin-bottom">
-      Convert to camel case
+      Do it!
     </button>
     <!-- <textarea 
       ng-if="outputText"
       ng-model="outputText"
       class="span-12 padding-standard">
     </textarea> -->
-    <p 
+    <pre 
       ng-if="outputText"
-      class="span-12 padding-standard">
-      {{outputText}}
-    </p>
+      class="span-12 padding-standard">{{outputText}}</pre>
 
   </div>
   

@@ -12,7 +12,7 @@ import * as services from './services/services';
 import * as controllers from "./views";
 
 angular
-  .module("skeletonApp", [
+  .module("caramelloApp", [
     "ngRoute",
     "ui.router",
     "services",
@@ -47,7 +47,7 @@ angular
   ]);
 
   //Route Authorisation
-  angular.module('skeletonApp').run([
+  angular.module('caramelloApp').run([
       '$rootScope',
       '$state',
       '$window',
