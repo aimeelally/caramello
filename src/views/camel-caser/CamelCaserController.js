@@ -16,7 +16,7 @@ angular.module("camelCaser", [])
         $scope.capitaliseFirstLetter = false;
         $scope.stripHTML = false;
         $scope.returnAsObject = false;
-        
+
         $scope.inputText = '';
         $scope.outputText = '';
         
@@ -37,6 +37,11 @@ angular.module("camelCaser", [])
           
           var outputText = str;
 
+          if ($scope.returnAsObject) {
+            outputText = createMultilineObject(outputText);
+            return outputText;
+          }
+
           if ($scope.stripHTML) {
             outputText = CamelService.stripHTML(outputText);
           }
@@ -55,14 +60,6 @@ angular.module("camelCaser", [])
 
           if ($scope.capitaliseFirstLetter) {
             outputText = CamelService.capitaliseFirstLetter(outputText);
-          }
-
-          /*if ($scope.returnAsObject) {
-            outputText = turnInputAndOutputIntoObect($scope.inputText, outputText);
-          }*/
-
-          if ($scope.returnAsObject) {
-            outputText = createMultilineObject(outputText);
           }
 
           return outputText;
@@ -88,14 +85,24 @@ angular.module("camelCaser", [])
             
             var key = pre;
 
+            if ($scope.stripHTML) {
+              key = CamelService.stripHTML(key);
+            }
+
             if ($scope.standardCamelCaseConversion) {
               key = CamelService.convertToCamelCase(key);
             }
+
             if ($scope.stripSpecialCharacters) {
-              key = CamelService.convertToCamelCase(key);
+              key = CamelService.stripSpecialCharacters(key);
             }
+
             if ($scope.stripNumbers) {
               key = CamelService.stripNumbers(key);
+            }
+
+            if ($scope.capitaliseFirstLetter) {
+              key = CamelService.capitaliseFirstLetter(key);
             }
             
             if(newObj[key]) {
@@ -106,7 +113,7 @@ angular.module("camelCaser", [])
 
           },{});
 
-          return JSON.stringify(newObj, undefined, 2);
+          return JSON.stringify(newObj, undefined, 4);
           
 
         }
