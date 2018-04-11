@@ -5,21 +5,10 @@ import angularUIRouter from "angular-ui-router";
 import angularSimplePopup from 'angular-simple-popup';
 import angularAutoFocus from 'angular-auto-focus';
 import angularTranslate from 'angular-translate';
-import configjson from './runtime/configjson.js';
 
-//import "./global-css/base.scss";
-// Styles
 import Styles from './global-css';
-
-// directives
 import directives from './directives/directives';
-
-// services
 import * as services from './services/services';
-
-// directives
-import * as config from './config';
-
 import * as controllers from "./views";
 
 angular
@@ -31,7 +20,6 @@ angular
     "mp.autoFocus",
     "jtcraddock.simplePopup",
     "pascalprecht.translate",
-    "configjson",
 
     //MISC
     "designSystem",
