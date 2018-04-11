@@ -7,11 +7,14 @@
 	textarea {
 		min-height: 200px;
     border: transparent;
-    background: #E5ECE9;
+    background: #ffdd83;
+    &:focus {
+      outline-color: $color-1;
+    }
 	}
 
 	pre {
-    background: #E5ECE9;
+    background: #ffdd83;
     white-space: pre-wrap;       /* Since CSS 2.1 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
     white-space: -pre-wrap;      /* Opera 4-6 */
