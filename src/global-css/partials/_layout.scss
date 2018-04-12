@@ -1,3 +1,7 @@
+body {
+  background: $background-color;
+}
+
 //header layout and anything that relies on the variable header height
 header{
   position:relative;

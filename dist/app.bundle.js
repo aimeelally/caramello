@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 99);
+/******/ 	return __webpack_require__(__webpack_require__.s = 97);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1055,17 +1055,17 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(17));
+__export(__webpack_require__(77));
+__export(__webpack_require__(78));
 __export(__webpack_require__(79));
 __export(__webpack_require__(80));
 __export(__webpack_require__(81));
 __export(__webpack_require__(82));
-__export(__webpack_require__(83));
-__export(__webpack_require__(84));
-__export(__webpack_require__(88));
+__export(__webpack_require__(86));
 __export(__webpack_require__(31));
 __export(__webpack_require__(36));
-__export(__webpack_require__(85));
-__export(__webpack_require__(78));
+__export(__webpack_require__(83));
+__export(__webpack_require__(76));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -2371,7 +2371,7 @@ exports.locationPluginFactory = locationPluginFactory;
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(98);
+__webpack_require__(96);
 module.exports = angular;
 
 
@@ -4643,21 +4643,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var interface_1 = __webpack_require__(9);
 var transition_1 = __webpack_require__(20);
 var hookRegistry_1 = __webpack_require__(27);
-var coreResolvables_1 = __webpack_require__(69);
-var redirectTo_1 = __webpack_require__(73);
-var onEnterExitRetain_1 = __webpack_require__(72);
-var resolve_1 = __webpack_require__(74);
-var views_1 = __webpack_require__(77);
-var updateGlobals_1 = __webpack_require__(75);
-var url_1 = __webpack_require__(76);
+var coreResolvables_1 = __webpack_require__(67);
+var redirectTo_1 = __webpack_require__(71);
+var onEnterExitRetain_1 = __webpack_require__(70);
+var resolve_1 = __webpack_require__(72);
+var views_1 = __webpack_require__(75);
+var updateGlobals_1 = __webpack_require__(73);
+var url_1 = __webpack_require__(74);
 var lazyLoad_1 = __webpack_require__(32);
 var transitionEventType_1 = __webpack_require__(43);
 var transitionHook_1 = __webpack_require__(13);
 var predicates_1 = __webpack_require__(1);
 var common_1 = __webpack_require__(0);
 var hof_1 = __webpack_require__(2);
-var ignoredTransition_1 = __webpack_require__(70);
-var invalidTransition_1 = __webpack_require__(71);
+var ignoredTransition_1 = __webpack_require__(68);
+var invalidTransition_1 = __webpack_require__(69);
 /**
  * The default [[Transition]] options.
  *
@@ -4895,10 +4895,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var angular_1 = __webpack_require__(10);
 var core_1 = __webpack_require__(4);
 var views_1 = __webpack_require__(30);
-var templateFactory_1 = __webpack_require__(96);
+var templateFactory_1 = __webpack_require__(94);
 var stateProvider_1 = __webpack_require__(56);
-var onEnterExitRetain_1 = __webpack_require__(95);
-var locationServices_1 = __webpack_require__(93);
+var onEnterExitRetain_1 = __webpack_require__(93);
+var locationServices_1 = __webpack_require__(91);
 var urlRouterProvider_1 = __webpack_require__(57);
 angular_1.ng.module("ui.router.angular1", []);
 var mod_init = angular_1.ng.module('ui.router.init', []);
@@ -8830,7 +8830,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (root,
 /* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(89);
+__webpack_require__(87);
 module.exports = 'ngRoute';
 
 
@@ -13044,11 +13044,11 @@ __export(__webpack_require__(29));
 __export(__webpack_require__(30));
 __export(__webpack_require__(56));
 __export(__webpack_require__(57));
-__webpack_require__(92);
 __webpack_require__(90);
-__webpack_require__(94);
-__webpack_require__(91);
-__webpack_require__(97);
+__webpack_require__(88);
+__webpack_require__(92);
+__webpack_require__(89);
+__webpack_require__(95);
 exports.default = "ui.router";
 //# sourceMappingURL=index.js.map
 
@@ -13057,29 +13057,18 @@ exports.default = "ui.router";
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__routing_atomRouting_conf__ = __webpack_require__(100);
-/* unused harmony reexport atomRoutingConfig */
-// routing
-
-//import "./atom/landing-page/LandingPageController";
-
-/***/ }),
-/* 64 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sample_directive_sample_directive__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sample_directive_sample_directive__ = __webpack_require__(98);
 // directives with @es6 dependency injection
 
 
 angular.module('directives', []).directive('sampleDirective', __WEBPACK_IMPORTED_MODULE_0__sample_directive_sample_directive__["a" /* default */]);
 
 /***/ }),
-/* 65 */
+/* 64 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base_scss__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base_scss__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__base_scss__);
 // Proprietary
 
@@ -13088,17 +13077,11 @@ angular.module('directives', []).directive('sampleDirective', __WEBPACK_IMPORTED
 //import AngularSimplePopupStyles from 'angular-simple-popup/simple-popup.css';
 
 /***/ }),
-/* 66 */
-/***/ (function(module, exports) {
-
-angular.module('configjson', []).constant('baseUrl', '@TODO add url live').constant('version', 'en').constant('videosUrl', { atoms: 'https://s3-eu-west-1.amazonaws.com/cdn.adaptemy.com/videos/newton/live/en/the-atomic-structure.mp4', isotopes: 'https://s3-eu-west-1.amazonaws.com/cdn.adaptemy.com/videos/newton/live/en/isotopes.mp4', molecules: 'https://s3-eu-west-1.amazonaws.com/cdn.adaptemy.com/videos/newton/live/en/molecules.mp4', sinkingFlotation: 'https://s3-eu-west-1.amazonaws.com/cdn.adaptemy.com/videos/newton/live/en/density.mp4', sl: { atoms: 'https://s3-eu-west-1.amazonaws.com/cdn.adaptemy.com/videos/newton/live/en/the-atomic-structure-sl.mp4', isotopes: 'https://s3-eu-west-1.amazonaws.com/cdn.adaptemy.com/videos/newton/live/en/isotopes-sl.mp4', molecules: 'https://s3-eu-west-1.amazonaws.com/cdn.adaptemy.com/videos/newton/live/en/molecules-sl.mp4', sinkingFlotation: 'https://s3-eu-west-1.amazonaws.com/cdn.adaptemy.com/videos/newton/live/en/density.mp4' } });
-
-/***/ }),
-/* 67 */
+/* 65 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SampleService__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SampleService__ = __webpack_require__(99);
 
 
 // directives with @es6 dependency injection
@@ -13111,20 +13094,23 @@ angular.module('configjson', []).constant('baseUrl', '@TODO add url live').const
 angular.module('services', []).service('SampleService', __WEBPACK_IMPORTED_MODULE_0__SampleService__["a" /* default */]);
 
 /***/ }),
-/* 68 */
+/* 66 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__design_system_DesignSystemController__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__design_system_DesignSystemController__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__design_system_DesignSystemController___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__design_system_DesignSystemController__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__camel_caser_CamelCaserController__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__camel_caser_CamelCaserController___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__camel_caser_CamelCaserController__);
 
 
 //MISC
 
 
 
+
 /***/ }),
-/* 69 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13148,7 +13134,7 @@ exports.registerAddCoreResolvables = function (transitionService) {
 //# sourceMappingURL=coreResolvables.js.map
 
 /***/ }),
-/* 70 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13185,7 +13171,7 @@ exports.registerIgnoredTransitionHook = function (transitionService) {
 //# sourceMappingURL=ignoredTransition.js.map
 
 /***/ }),
-/* 71 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13210,7 +13196,7 @@ exports.registerInvalidTransitionHook = function (transitionService) {
 //# sourceMappingURL=invalidTransition.js.map
 
 /***/ }),
-/* 72 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13273,7 +13259,7 @@ exports.registerOnEnterHook = function (transitionService) {
 //# sourceMappingURL=onEnterExitRetain.js.map
 
 /***/ }),
-/* 73 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13316,7 +13302,7 @@ exports.registerRedirectToHook = function (transitionService) {
 //# sourceMappingURL=redirectTo.js.map
 
 /***/ }),
-/* 74 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13365,7 +13351,7 @@ exports.registerLazyResolveState = function (transitionService) {
 //# sourceMappingURL=resolve.js.map
 
 /***/ }),
-/* 75 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13406,7 +13392,7 @@ exports.registerUpdateGlobalState = function (transitionService) {
 //# sourceMappingURL=updateGlobals.js.map
 
 /***/ }),
-/* 76 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13437,7 +13423,7 @@ exports.registerUpdateUrl = function (transitionService) {
 //# sourceMappingURL=url.js.map
 
 /***/ }),
-/* 77 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13490,7 +13476,7 @@ exports.registerActivateViews = function (transitionService) {
 //# sourceMappingURL=views.js.map
 
 /***/ }),
-/* 78 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13517,7 +13503,7 @@ exports.UIRouterPluginBase = UIRouterPluginBase;
 //# sourceMappingURL=interface.js.map
 
 /***/ }),
-/* 79 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13533,7 +13519,7 @@ __export(__webpack_require__(24));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 80 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13548,7 +13534,7 @@ __export(__webpack_require__(18));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 81 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13564,7 +13550,7 @@ __export(__webpack_require__(19));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 82 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13583,7 +13569,7 @@ __export(__webpack_require__(7));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 83 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13617,7 +13603,7 @@ __export(__webpack_require__(28));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 84 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13634,7 +13620,7 @@ __export(__webpack_require__(47));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 85 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13648,11 +13634,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @module vanilla
  */
 /** */
-__export(__webpack_require__(86));
+__export(__webpack_require__(84));
 //# sourceMappingURL=vanilla.js.map
 
 /***/ }),
-/* 86 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13670,11 +13656,11 @@ __export(__webpack_require__(53));
 __export(__webpack_require__(51));
 __export(__webpack_require__(48));
 __export(__webpack_require__(14));
-__export(__webpack_require__(87));
+__export(__webpack_require__(85));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 87 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13709,7 +13695,7 @@ exports.memoryLocationPlugin = utils_1.locationPluginFactory("vanilla.memoryLoca
 //# sourceMappingURL=plugins.js.map
 
 /***/ }),
-/* 88 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13722,7 +13708,7 @@ __export(__webpack_require__(55));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 89 */
+/* 87 */
 /***/ (function(module, exports) {
 
 /**
@@ -14952,7 +14938,7 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 
 /***/ }),
-/* 90 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15529,7 +15515,7 @@ angular_1.ng.module('ui.router.state')
 //# sourceMappingURL=stateDirectives.js.map
 
 /***/ }),
-/* 91 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15825,7 +15811,7 @@ angular_1.ng.module('ui.router.state').directive('uiView', $ViewDirectiveFill);
 //# sourceMappingURL=viewDirective.js.map
 
 /***/ }),
-/* 92 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16199,7 +16185,7 @@ var $urlMatcherFactoryProvider;
 //# sourceMappingURL=injectables.js.map
 
 /***/ }),
-/* 93 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16280,7 +16266,7 @@ exports.Ng1LocationServices = Ng1LocationServices;
 //# sourceMappingURL=locationServices.js.map
 
 /***/ }),
-/* 94 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16332,7 +16318,7 @@ angular_1.ng.module('ui.router.state')
 //# sourceMappingURL=stateFilters.js.map
 
 /***/ }),
-/* 95 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16363,7 +16349,7 @@ exports.getStateHookBuilder = function (hookName) {
 //# sourceMappingURL=onEnterExitRetain.js.map
 
 /***/ }),
-/* 96 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16563,7 +16549,7 @@ var scopeBindings = function (bindingsObj) { return Object.keys(bindingsObj || {
 //# sourceMappingURL=templateFactory.js.map
 
 /***/ }),
-/* 97 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16592,7 +16578,7 @@ angular_1.ng.module('ui.router.state').provider('$uiViewScroll', $ViewScrollProv
 //# sourceMappingURL=viewScroll.js.map
 
 /***/ }),
-/* 98 */
+/* 96 */
 /***/ (function(module, exports) {
 
 /**
@@ -50956,7 +50942,7 @@ $provide.value("$locale", {
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ }),
-/* 99 */
+/* 97 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -50973,13 +50959,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_auto_focus___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_auto_focus__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_translate__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_translate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_translate__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__runtime_configjson_js__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__runtime_configjson_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__runtime_configjson_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__global_css__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__directives_directives__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_services__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__config__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__global_css__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_directives__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_services__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views__ = __webpack_require__(66);
 
 
 
@@ -50990,25 +50973,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-//import "./global-css/base.scss";
-// Styles
-
-
-// directives
-
-
-// services
-
-
-// directives
 
 
 
 
-__WEBPACK_IMPORTED_MODULE_0_angular___default.a.module("skeletonApp", ["ngRoute", "ui.router", "services", "directives", "mp.autoFocus", "jtcraddock.simplePopup", "pascalprecht.translate", "configjson",
+__WEBPACK_IMPORTED_MODULE_0_angular___default.a.module("caramelloApp", ["ngRoute", "ui.router", "services", "directives", "mp.autoFocus", "jtcraddock.simplePopup", "pascalprecht.translate",
 
 //MISC
-"designSystem"]).config(["$locationProvider", "$routeProvider", "$stateProvider", "$urlRouterProvider", function config($locationProvider, $routeProvider, $stateProvider, $urlRouterProvider) {
+"designSystem", "camelCaser"]).config(["$locationProvider", "$routeProvider", "$stateProvider", "$urlRouterProvider", function config($locationProvider, $routeProvider, $stateProvider, $urlRouterProvider) {
 
   $locationProvider.hashPrefix("!");
   $urlRouterProvider.when("", '/camel-caser');
@@ -51022,43 +50994,11 @@ __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module("skeletonApp", ["ngRoute"
 }]);
 
 //Route Authorisation
-__WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('skeletonApp').run(['$rootScope', '$state', '$window', function ($rootScope, $state, $window) {}]);
+__WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('caramelloApp').run(['$rootScope', '$state', '$window', function ($rootScope, $state, $window) {}]);
 // /Route Authorisation
 
 /***/ }),
-/* 100 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export default */
-atomRouting.$inject = ['$stateProvider'];
-
-function atomRouting($) {
-  /**
-   * <ATOM ROUTES>
-   */
-
-  /*$.state('atom-landing-page', {
-   name: 'atomLandingPage',
-    url: '/atom/landingpage',
-    templateUrl: 'src/views/atom/landing-page/landing-page.html'//,
-    //controller: 'AtomLandingPageController as ctrl',
-  });*/
-
-  $.state('atomLandingPage', {
-    url: '/atom-landing-page',
-    templateUrl: './views/atom/landing-page/landing-page.html',
-    controller: 'AtomLandingPageController as ctrl'
-    //component: "atomLandingPage"
-  });
-
-  /**
-   * </ATOM ROUTES>
-   */
-};
-
-/***/ }),
-/* 101 */
+/* 98 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51092,7 +51032,7 @@ function sampleDirective() {
 }
 
 /***/ }),
-/* 102 */
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51104,14 +51044,110 @@ function sampleDirective() {
 }]);
 
 /***/ }),
-/* 103 */
+/* 100 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+angular.module("camelCaser", []).component("camelCaser", {
+  template: __webpack_require__(103),
+  controller: ['$timeout', '$scope', function CamelCaserController($timeout, $scope) {
+
+    var loremIpsum = "Lorem ip-sum, adipiscing elit.";
+
+    $scope.standardCamelCaseConversion = false;
+    $scope.stripSpecialCharacters = false;
+    $scope.stripNumbers = false;
+    $scope.capitaliseFirstLetter = false;
+    $scope.stripHTML = false;
+
+    $scope.returnAsObject = false;
+    $scope.inputText = '';
+    $scope.outputText = '';
+
+    $scope.startStrip = function () {
+      $scope.outputText = strip($scope.inputText);
+    };
+
+    function strip(str) {
+      var outputText = str;
+
+      if ($scope.stripHTML) {
+        outputText = stripHTML(outputText);
+      }
+
+      if ($scope.standardCamelCaseConversion) {
+        outputText = convertToCamelCase(outputText);
+      }
+
+      if ($scope.stripSpecialCharacters) {
+        outputText = stripSpecialCharacters(outputText);
+      }
+
+      if ($scope.stripNumbers) {
+        outputText = stripNumbers(outputText);
+      }
+
+      if ($scope.capitaliseFirstLetter) {
+        outputText = capitaliseFirstLetter(outputText);
+      }
+
+      if ($scope.returnAsObject) {
+        outputText = turnInputAndOutputIntoObect($scope.inputText, outputText);
+      }
+
+      return outputText;
+    }
+
+    function stripHTML(str) {
+      return str.replace(/(<([^>]+)>)/ig, "");
+    }
+
+    function convertToCamelCase(str) {
+      return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
+        if (+match === 0) return ""; // or if (/\s+/.test(match)) for white spaces
+        // lowercases first letter
+        return index === 0 ? match.toLowerCase() : match.toUpperCase();
+      });
+    }
+
+    function stripNumbers(str) {
+      return str.replace(/[0-9]/g, "");
+    }
+
+    function capitaliseFirstLetter(str) {
+      return str.replace(/^[a-z]/, u => u.toUpperCase());
+    }
+
+    function stripSpecialCharacters(str) {
+      return str.replace(/([!@:;#$%\/^&-._,*])/g, "");
+    }
+
+    function turnInputAndOutputIntoObect(input, output) {
+      //var prettyObject = {[output]: input}; 
+
+      var prettyObject = {
+        "aime": "werwer",
+        "ret": "jkfiw"
+      };
+
+      return JSON.stringify(prettyObject, undefined, 2);
+    }
+  }]
+});
+
+//([!@#$%\/^&._,*])
+
+/***/ }),
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 angular.module("designSystem", []).component("designSystem", {
-  template: __webpack_require__(105),
+  template: __webpack_require__(104),
   controller: ['$timeout', function DesignSystemController($timeout) {
 
     var that = this;
@@ -51146,13 +51182,19 @@ angular.module("designSystem", []).component("designSystem", {
 });
 
 /***/ }),
-/* 104 */
+/* 102 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 105 */
+/* 103 */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=camel-caser class=\"span-12 padding-standard fancy-checkboxes\"> <h1>Caramello Camel Caser</h1> <div class=\"span-4 margin-bottom\"> <div class=\"relative margin-bottom\"> <input id=standardCamelCaseConversion type=checkbox ng-model=standardCamelCaseConversion /> <label for=standardCamelCaseConversion></label> <label for=standardCamelCaseConversion>Convert to Camel Case</label> </div> <div class=\"relative margin-bottom\"> <input id=capitaliseFirstLetter type=checkbox ng-model=capitaliseFirstLetter /> <label for=capitaliseFirstLetter></label> <label for=capitaliseFirstLetter>Capitalise First Letter</label> </div> <div class=\"relative margin-bottom\"> <input id=stripSpecialCharacters type=checkbox ng-model=stripSpecialCharacters /> <label for=stripSpecialCharacters></label> <label for=stripSpecialCharacters>Strip Special Characters</label> </div> <div class=\"relative margin-bottom\"> <input id=stripNumbers type=checkbox ng-model=stripNumbers /> <label for=stripNumbers></label> <label for=stripNumbers>Strip Numbers</label> </div> <div class=\"relative margin-bottom\"> <input id=stripHTML type=checkbox ng-model=stripHTML /> <label for=stripHTML></label> <label for=stripHTML>Strip HTML</label> </div> <div class=\"relative margin-bottom\"> <input id=returnAsObject type=checkbox ng-model=returnAsObject /> <label for=returnAsObject></label> <label for=returnAsObject>Return as object parameter</label> </div> </div> <div class=\"white-bg span-8 padding-standard\"> <textarea ng-model=inputText class=\"span-12 padding-standard margin-bottom\">\n    </textarea> <button ng-click=startStrip() class=\"btn-2 margin-bottom\"> Do it! </button> <pre ng-if=outputText class=\"span-12 padding-standard\">\n      {{outputText}}\n    </pre> </div> </div>";
+
+/***/ }),
+/* 104 */
 /***/ (function(module, exports) {
 
 module.exports = "<div id=design-system-page class=\"page-container span-12\"> <aside class=\"{{$ctrl.showSidePanel ? 'visible' : ''}} padding-standard\"> <div class=\"span-12 bubble-container\"> <speech-bubble bubble-content=\"Woo, a design system\"></speech-bubble> </div> <non-player-character></non-player-character> </aside> <main class=content-padding> <h1 class=\"span-12 center-text\"> Adaptemy Design System </h1> <h2 class=span-12>Modify Colours</h2> <div class=\"white-bg dark-font span-12 padding-standard margin-bottom\"> <label for=colorWell>Primary color:</label> <input type=color value=#066abe id=colorWell> </div> <h2 class=span-12>Buttons on a Light Background</h2> <div class=\"white-bg span-12 padding-standard margin-bottom\"> <button class=\"btn-1 modify-primary-color\">Button 1</button> <button class=btn-2>Button 2</button> <button class=btn-3>Button 3</button> <button class=btn-4>Button 4</button> </div> <h2 class=span-12>Buttons on a Dark Background</h2> <div class=\"dark-bg span-12 padding-standard margin-bottom\"> <button class=btn-5>Button 5</button> <button class=btn-6>Button 6</button> <button class=btn-7>Button 7</button> <button class=btn-8>Button 8</button> </div> <h2 class=span-12>Colour Palette - Primarys</h2> <div class=\"white-bg span-12 padding-standard margin-bottom\"> <div class=\"color-block color-1 modify-primary-color\">#066abe</div> <div class=\"color-block color-2\">#1dadfc</div> <div class=\"color-block color-3\">#444444</div> </div> <h2 class=span-12>Colour Palette - Neutrals</h2> <div class=\"white-bg span-12 padding-standard margin-bottom\"> <div class=\"color-block color-neutral-0\">#ffffff</div> <div class=\"color-block color-neutral-1\">#f2f2f2</div> <div class=\"color-block color-neutral-2\">#f3f3f3</div> <div class=\"color-block color-neutral-3\">#e2e2e2</div> <div class=\"color-block color-neutral-4\">#e9e9e9</div> <div class=\"color-block color-neutral-5\">#a1a1a1</div> <div class=\"color-block color-neutral-6\">#666666</div> <div class=\"color-block color-neutral-7\">#dddddd</div> </div> <h2 class=span-12>Colour Palette - Colours</h2> <div class=\"white-bg span-12 padding-standard margin-bottom\"> <div class=\"color-block color-strand-1\">#a884ba</div> <div class=\"color-block color-strand-2\">#eb5a4b</div> <div class=\"color-block color-strand-3\">#fbc830</div> <div class=\"color-block color-strand-4\">#99d240</div> <div class=\"color-block color-strand-5\">#03ac8b</div> </div> <h2 class=span-12>Text Stylings</h2> <div class=\"white-bg dark-font span-12 padding-standard margin-bottom\"> <h1>This is an example of a h1 heading. Here's some extra text to show new line separation.</h1> <hr> <h2>This is an example of a h2 heading. Here's some extra text to show new line separation.</h2> <hr> <h3>This is an example of a h3 heading. Here's some extra text to show new line separation.</h3> <hr> <h4>This is an example of a h4 heading. Here's some extra text to show new line separation.</h4> <hr> <h5>This is an example of a h5 heading. Here's some extra text to show new line separation.</h5> <hr> <h6>This is an example of a h6 heading. Here's some extra text to show new line separation.</h6> <hr> <p>This is an example of a paragraph. Lorem ipsum dolor sit amet, postea graeco vis an, ius ei liber ignota latine, eruditi ornatus ut usu. <i>This is an example of italic text inside paragraph.</i> Postea maiorum qui ei, cum sint regione mediocrem ea, sit ei nulla legere intellegat. Eum dicat errem populo ea. Ancillae gloriatur in nec. Modo fastidii eu vix.</p> <hr> <span class=block>This is an example of a span.</span> <hr> <em class=block>This an example of emphasis text.</em> <hr> <strong class=block>This is an example of strong text.</strong> <hr> <i class=block>This is an example of italic text.</i> <hr> </div> </main> </div>";

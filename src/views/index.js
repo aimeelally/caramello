@@ -1,7 +1,6 @@
 "use strict";
 
-//MISC
-import "./design-system/DesignSystemController";
+// CONTROLLERS
 import "./camel-caser/CamelCaserController";
 
 

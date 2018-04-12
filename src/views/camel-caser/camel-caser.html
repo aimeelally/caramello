@@ -1,95 +1,103 @@
-<div id="design-system-page" class="page-container span-12">
+<div id="camel-caser" class="span-12 padding-standard fancy-checkboxes">
+  
+  <h1 class="span-12 padding-standard center-text">Caramello Camel Caser</h1>
 
-	<aside class="{{$ctrl.showSidePanel ? 'visible' : ''}} padding-standard">
-    <div class="span-12 bubble-container">
-      <speech-bubble bubble-content="Woo, a design system"></speech-bubble>
-    </div>
-    <non-player-character></non-player-character>
-  </aside>
-
-  <main class="content-padding">
-
-  	<h1 class="span-12 center-text">
-      Adaptemy Design System
-    </h1>
-
-    <h2 class="span-12">Modify Colours</h2>
-    <div class="white-bg dark-font span-12 padding-standard margin-bottom">
-    	<label for="colorWell">Primary color:</label>
-			<input type="color" value="#066abe" id="colorWell">
-		</div>
-
-    <h2 class="span-12">Buttons on a Light Background</h2>
-  	<div class="white-bg span-12 padding-standard margin-bottom">
-  		<button class="btn-1 modify-primary-color">Button 1</button>
-  		<button class="btn-2">Button 2</button>
-  		<button class="btn-3">Button 3</button>
-  		<button class="btn-4">Button 4</button>
-  	</div>
-
-  	<h2 class="span-12">Buttons on a Dark Background</h2>
-  	<div class="dark-bg span-12 padding-standard margin-bottom">
-  		<button class="btn-5">Button 5</button>
-  		<button class="btn-6">Button 6</button>
-  		<button class="btn-7">Button 7</button>
-  		<button class="btn-8">Button 8</button>
-  	</div>
-
-  	<h2 class="span-12">Colour Palette - Primarys</h2>
-  	<div class="white-bg span-12 padding-standard margin-bottom">
-      <div class="color-block color-1 modify-primary-color">#066abe</div>
-      <div class="color-block color-2">#1dadfc</div>
-      <div class="color-block color-3">#444444</div>
-  	</div>
-
-  	<h2 class="span-12">Colour Palette - Neutrals</h2>
-  	<div class="white-bg span-12 padding-standard margin-bottom">
-      <div class="color-block color-neutral-0">#ffffff</div>
-      <div class="color-block color-neutral-1">#f2f2f2</div>
-      <div class="color-block color-neutral-2">#f3f3f3</div>
-      <div class="color-block color-neutral-3">#e2e2e2</div>
-      <div class="color-block color-neutral-4">#e9e9e9</div>
-      <div class="color-block color-neutral-5">#a1a1a1</div>
-      <div class="color-block color-neutral-6">#666666</div>
-      <div class="color-block color-neutral-7">#dddddd</div>
-  	</div>
-
-  	<h2 class="span-12">Colour Palette - Colours</h2>
-  	<div class="white-bg span-12 padding-standard margin-bottom">
+  <div class="span-4 md-screen margin-bottom">
       
-      <div class="color-block color-strand-1">#a884ba</div>
-      <div class="color-block color-strand-2">#eb5a4b</div>
-      <div class="color-block color-strand-3">#fbc830</div>
-      <div class="color-block color-strand-4">#99d240</div>
-      <div class="color-block color-strand-5">#03ac8b</div>
-  	</div>
+    <div class="relative margin-bottom">
+      <input
+        id="standardCamelCaseConversion"
+        type="checkbox" 
+        ng-model="standardCamelCaseConversion"
+        />
+      <label for="standardCamelCaseConversion"></label>
+      <label for="standardCamelCaseConversion">Convert to Camel Case</label>
+    </div>
 
-  	<h2 class="span-12">Text Stylings</h2>
-  	<div class="white-bg dark-font span-12 padding-standard margin-bottom">
-      <h1>This is an example of a h1 heading. Here's some extra text to show new line separation.</h1>
-      <hr>
-      <h2>This is an example of a h2 heading. Here's some extra text to show new line separation.</h2>
-      <hr>
-      <h3>This is an example of a h3 heading. Here's some extra text to show new line separation.</h3>
-      <hr>
-      <h4>This is an example of a h4 heading. Here's some extra text to show new line separation.</h4>
-      <hr>
-      <h5>This is an example of a h5 heading. Here's some extra text to show new line separation.</h5>
-      <hr>
-      <h6>This is an example of a h6 heading. Here's some extra text to show new line separation.</h6>
-      <hr>
-      <p>This is an example of a paragraph. Lorem ipsum dolor sit amet, postea graeco vis an, ius ei liber ignota latine, eruditi ornatus ut usu. <i>This is an example of italic text inside paragraph.</i> Postea maiorum qui ei, cum sint regione mediocrem ea, sit ei nulla legere intellegat. Eum dicat errem populo ea. Ancillae gloriatur in nec. Modo fastidii eu vix.</p>
-      <hr>
-      <span class="block">This is an example of a span.</span>
-      <hr>
-      <em class="block">This an example of emphasis text.</em>
-      <hr>
-      <strong class="block">This is an example of strong text.</strong>
-      <hr>
-      <i class="block">This is an example of italic text.</i>
-      <hr>
-  	</div>
+    <div class="relative margin-bottom">
+      <input
+        id="capitaliseFirstLetter"
+        type="checkbox" 
+        ng-model="capitaliseFirstLetter"
+        />
+      <label for="capitaliseFirstLetter"></label>
+      <label for="capitaliseFirstLetter">Capitalise First Letter</label>
+    </div>
 
-  </main>
+    <div class="relative margin-bottom">
+      <input
+        id="stripSpecialCharacters"
+        type="checkbox" 
+        ng-model="stripSpecialCharacters"
+        />
+      <label for="stripSpecialCharacters"></label>
+      <label for="stripSpecialCharacters">Strip Special Characters</label>
+    </div>
+
+    <div class="relative margin-bottom">
+      <input
+        id="stripNumbers"
+        type="checkbox" 
+        ng-model="stripNumbers"
+        />
+      <label for="stripNumbers"></label>
+      <label for="stripNumbers">Strip Numbers</label>
+    </div>
+
+    <div class="relative margin-bottom">
+      <input
+        id="stripHTML"
+        type="checkbox" 
+        ng-model="stripHTML"
+        />
+      <label for="stripHTML"></label>
+      <label for="stripHTML">Strip HTML</label>
+    </div>
+
+    <div class="relative margin-bottom">
+      <input
+        id="returnAsObject"
+        type="checkbox" 
+        ng-model="returnAsObject"
+        />
+      <label for="returnAsObject"></label>
+      <label for="returnAsObject">Return result as an object</label>
+    </div>
+
+  </div>
+
+  <div class="span-8 md-screen">
+
+    <textarea 
+      ng-model="inputText"
+      class="span-12 padding-standard margin-bottom">
+    </textarea>
+    
+    <div class="span-12">
+      <button 
+        ng-click="startStrip()"
+        class="btn-1 center-horizontally margin-bottom">
+        Do it!
+      </button>
+      
+      <button 
+        class="btn-4 block center-horizontally margin-bottom" 
+        ng-if="outputText"
+        ng-click="copyToClipboard()">
+        Copy to clipboard
+      </button>
+    </div>
+    
+    <textarea 
+      ng-model="outputText" 
+      id="copyArea">
+    </textarea>
+    <pre
+      ng-if="outputText"
+      class="span-12 padding-standard">{{outputText}}</pre>
+
+  </div>
+  
+  
 
 </div>

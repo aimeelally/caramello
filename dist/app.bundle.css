@@ -267,20 +267,6 @@ html, body {
 @viewport {
   initial-scale: 1; }
 
-#learn-page .question-area *, #learn-page .solution-area * {
-  box-sizing: content-box;
-  /*
-    @sass-fix
-
-  table[Attributes Style] {
-    border-top-width: 1px;
-    border-right-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-spacing: 1px;
-  }
-  */ }
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, button, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -2103,54 +2089,16 @@ speech-bubble:last-of-type {
   #design-system-page .color-block.color-neutral-7 {
     background: #dddddd; }
 
-#design-system-page .white-bg {
+#camel-caser .white-bg {
   background: #ffffff; }
 
-#design-system-page .dark-bg {
+#camel-caser .dark-bg {
   background: #444444; }
 
-#design-system-page .dark-font * {
+#camel-caser .dark-font * {
   color: #666666; }
 
-#design-system-page .color-block {
-  width: 150px;
-  height: 150px;
-  padding: 1em;
-  display: inline-block;
-  color: #ffffff; }
-  #design-system-page .color-block.color-1 {
-    background: #f75914; }
-  #design-system-page .color-block.color-2 {
-    background: #1caff6; }
-  #design-system-page .color-block.color-3 {
-    background: #444444; }
-  #design-system-page .color-block.color-strand-1 {
-    background: #a884ba; }
-  #design-system-page .color-block.color-strand-2 {
-    background: #eb5a4b; }
-  #design-system-page .color-block.color-strand-3 {
-    background: #FBC830; }
-  #design-system-page .color-block.color-strand-4 {
-    background: #99D240; }
-  #design-system-page .color-block.color-strand-5 {
-    background: #03AC8B; }
-  #design-system-page .color-block.color-neutral-0 {
-    background: #ffffff;
-    border: 1px solid #444444;
-    color: #666666; }
-  #design-system-page .color-block.color-neutral-1 {
-    background: #f2f2f2; }
-  #design-system-page .color-block.color-neutral-2 {
-    background: #f3f3f3; }
-  #design-system-page .color-block.color-neutral-3 {
-    background: #e2e2e2; }
-  #design-system-page .color-block.color-neutral-4 {
-    background: #e9e9e9; }
-  #design-system-page .color-block.color-neutral-5 {
-    background: #a1a1a1; }
-  #design-system-page .color-block.color-neutral-6 {
-    background: #666666; }
-  #design-system-page .color-block.color-neutral-7 {
-    background: #dddddd; }
+#camel-caser textarea {
+  min-height: 200px; }
 
 /*# sourceMappingURL=app.bundle.css.map*/

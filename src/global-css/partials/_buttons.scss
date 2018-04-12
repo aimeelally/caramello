@@ -10,7 +10,7 @@
 
 .btn-1{
   @extend %btn;
-  background: linear-gradient(to top, $color-4 0%, $color-1 100%);
+  background: $color-1;
   border: 2px solid $color-1;
   padding:.5em 2em;
   @include rounded(2em);
@@ -18,7 +18,7 @@
   &:hover{
     text-decoration:none;
     background-color:$color-1-hover;
-    background-image: linear-gradient(to top, $color-1-hover 0%, $color-1-hover 100%);
+    background-image: $color-1-hover;
     border: 2px solid $color-1-hover;
   }
   &:active{
