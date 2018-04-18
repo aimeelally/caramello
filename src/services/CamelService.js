@@ -44,7 +44,7 @@ export default [function(){
   }
 
   function stripSpecialCharacters(str) {
-    return str.replace(/([{}\[\]|=#!@:;#$%\/\"\'^&-._,*])/g, "");
+    return str.replace(/([{}\[\]<>\?£|=#!@:;#$%\/\"\'^&-._,*])/g, "");
   }
 
  
