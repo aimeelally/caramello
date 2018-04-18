@@ -1,14 +1,16 @@
 "use strict";
 
 import TEST from "./camel-caser.html";
+import Caramel from "../../classes/Caramel.js";
 
 angular.module("camelCaser", [])
 	.component("camelCaser", {
 		template: require("./camel-caser.html"), 
-		controller: [ '$scope', 'CamelService',
-			function CamelCaserController($scope, CamelService) {
+		controller: [ '$scope',
+			function CamelCaserController($scope) {
 				
-        var loremIpsum = "Lorem ip-sum, adipiscing elit.";
+        var loremIpsum = "Lorem ip-sum, adipiscing elit.",
+            caramel = new Caramel();
 
         $scope.standardCamelCaseConversion = false;
         $scope.stripSpecialCharacters = false;
@@ -44,23 +46,23 @@ angular.module("camelCaser", [])
           }
 
           if ($scope.stripHTML) {
-            outputText = CamelService.stripHTML(outputText);
+            outputText = caramel.stripHTML(outputText);
           }
 
           if ($scope.standardCamelCaseConversion) {
-            outputText = CamelService.convertToCamelCase(outputText);
+            outputText = caramel.convertToCamelCase(outputText);
           }
 
           if ($scope.stripSpecialCharacters) {
-            outputText = CamelService.stripSpecialCharacters(outputText);
+            outputText = caramel.stripSpecialCharacters(outputText);
           }
 
           if ($scope.stripNumbers) {
-            outputText = CamelService.stripNumbers(outputText);
+            outputText = caramel.stripNumbers(outputText);
           }
 
           if ($scope.capitaliseFirstLetter) {
-            outputText = CamelService.capitaliseFirstLetter(outputText);
+            outputText = caramel.capitaliseFirstLetter(outputText);
           }
 
           return outputText;
@@ -78,8 +80,8 @@ angular.module("camelCaser", [])
 
         function createMultilineObject(input) {
           
-          var cleanInput = CamelService.stripHTML(input);          
-          var arrayOfCleanInput = CamelService.getArrayOfTextFromStrippedHtml(cleanInput);
+          var cleanInput = caramel.stripHTML(input);          
+          var arrayOfCleanInput = caramel.getArrayOfTextFromStrippedHtml(cleanInput);
           var newObj = {};
 
           arrayOfCleanInput.reduce(function(curr,pre) {
@@ -87,23 +89,23 @@ angular.module("camelCaser", [])
             var key = pre;
 
             if ($scope.stripHTML) {
-              key = CamelService.stripHTML(key);
+              key = caramel.stripHTML(key);
             }
 
             if ($scope.standardCamelCaseConversion) {
-              key = CamelService.convertToCamelCase(key);
+              key = caramel.convertToCamelCase(key);
             }
 
             if ($scope.stripSpecialCharacters) {
-              key = CamelService.stripSpecialCharacters(key);
+              key = caramel.stripSpecialCharacters(key);
             }
 
             if ($scope.stripNumbers) {
-              key = CamelService.stripNumbers(key);
+              key = caramel.stripNumbers(key);
             }
 
             if ($scope.capitaliseFirstLetter) {
-              key = CamelService.capitaliseFirstLetter(key);
+              key = caramel.capitaliseFirstLetter(key);
             }
             
             if(newObj[key]) {
