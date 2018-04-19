@@ -14,8 +14,9 @@ export default function(){
   function stripHTML(str) {
     var strippedHTML = str.replace(/(<([^>]+)>)/ig,"\n");
     var stripDoubleBrackets = strippedHTML.replace(/({{.+}})/g,"\n").trim();
+    var stripExtraLinesFromCleanInput = stripDoubleBrackets.replace(/\s\s+/g, "\n");
     
-    return stripDoubleBrackets;
+    return stripExtraLinesFromCleanInput;
   }
 
   function getArrayOfTextFromStrippedHtml(strippedHtml) {
@@ -42,7 +43,7 @@ export default function(){
   }
 
   function stripSpecialCharacters(str) {
-    return str.replace(/([{}\[\]|=#!@:;#$%\/\"\'^&-._,*])/g, "");
+    return str.replace(/([{}\[\]<>\?£|=#!@:;#$%\/\"\'^&-._,*])/g, "");
   }
 
  
