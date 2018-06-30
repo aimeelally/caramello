@@ -5,8 +5,8 @@ import TEST from "./camel-caser.html";
 angular.module("camelCaser", [])
 	.component("camelCaser", {
 		template: require("./camel-caser.html"), 
-		controller: [ '$scope', 'CamelService',
-			function CamelCaserController($scope, CamelService) {
+		controller: [ '$scope', 'Caramel',
+			function CamelCaserController($scope, Caramel) {
 				
         var loremIpsum = "Lorem ip-sum, adipiscing elit.";
 
@@ -44,23 +44,23 @@ angular.module("camelCaser", [])
           }
 
           if ($scope.stripHTML) {
-            outputText = CamelService.stripHTML(outputText);
+            outputText = Caramel.stripHTML(outputText);
           }
 
           if ($scope.standardCamelCaseConversion) {
-            outputText = CamelService.convertToCamelCase(outputText);
+            outputText = Caramel.convertToCamelCase(outputText);
           }
 
           if ($scope.stripSpecialCharacters) {
-            outputText = CamelService.stripSpecialCharacters(outputText);
+            outputText = Caramel.stripSpecialCharacters(outputText);
           }
 
           if ($scope.stripNumbers) {
-            outputText = CamelService.stripNumbers(outputText);
+            outputText = Caramel.stripNumbers(outputText);
           }
 
           if ($scope.capitaliseFirstLetter) {
-            outputText = CamelService.capitaliseFirstLetter(outputText);
+            outputText = Caramel.capitaliseFirstLetter(outputText);
           }
 
           return outputText;
@@ -78,8 +78,8 @@ angular.module("camelCaser", [])
 
         function createMultilineObject(input) {
           
-          var cleanInput = CamelService.stripHTML(input);          
-          var arrayOfCleanInput = CamelService.getArrayOfTextFromStrippedHtml(cleanInput);
+          var cleanInput = Caramel.stripHTML(input);          
+          var arrayOfCleanInput = Caramel.getArrayOfTextFromStrippedHtml(cleanInput);
           var newObj = {};
 
           arrayOfCleanInput.reduce(function(curr,pre) {
@@ -87,23 +87,23 @@ angular.module("camelCaser", [])
             var key = pre;
 
             if ($scope.stripHTML) {
-              key = CamelService.stripHTML(key);
+              key = Caramel.stripHTML(key);
             }
 
             if ($scope.standardCamelCaseConversion) {
-              key = CamelService.convertToCamelCase(key);
+              key = Caramel.convertToCamelCase(key);
             }
 
             if ($scope.stripSpecialCharacters) {
-              key = CamelService.stripSpecialCharacters(key);
+              key = Caramel.stripSpecialCharacters(key);
             }
 
             if ($scope.stripNumbers) {
-              key = CamelService.stripNumbers(key);
+              key = Caramel.stripNumbers(key);
             }
 
             if ($scope.capitaliseFirstLetter) {
-              key = CamelService.capitaliseFirstLetter(key);
+              key = Caramel.capitaliseFirstLetter(key);
             }
             
             if(newObj[key]) {

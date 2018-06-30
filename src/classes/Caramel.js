@@ -1,5 +1,4 @@
-
-export default [function(){
+export default function(){
   var that =  {
                 
                 stripHTML: stripHTML,
@@ -50,4 +49,4 @@ export default [function(){
  
   return that;
 
-}];
+};
