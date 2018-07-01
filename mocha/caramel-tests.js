@@ -1,6 +1,10 @@
 import Caramel from '../src/classes/Caramel.js';
+
 var test = window.unitjs;
+
 var caramel = new Caramel();
+
+// CARAMEL CLASS
 describe('Caramel', function(){
   it('Should be a function', function(){
     test.assert(typeof Caramel === 'function');

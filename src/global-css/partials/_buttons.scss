@@ -3,7 +3,7 @@
   cursor:pointer;
   font-family:$font;
   font-size: 1.125rem;
-  @include transition(all .5s ease);
+  transition: all .5s ease;
   text-align: center;
   -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -13,7 +13,7 @@
   background: $color-1;
   border: 2px solid $color-1;
   padding:.5em 2em;
-  @include rounded(2em);
+  border-radius: 2em;
   color:$color-neutral-0;
   &:hover{
     text-decoration:none;
@@ -63,7 +63,7 @@
   background-color:transparent;
   border: 2px solid $color-1;
   padding:.5em 2em;
-  @include rounded(2em);
+  border-radius: 2em;
   color:$color-1;
   &:hover{
     text-decoration:none;
@@ -90,6 +90,8 @@
 
 .btn-3{
   @extend %btn;
+  font-size: initial;
+  font-weight: initial;
   color: $color-neutral-5;
   border: none;
   background: none;
@@ -132,7 +134,7 @@
   background-color: $color-neutral-0;
   border: 2px solid $color-neutral-0;
   padding:.5em 2em;
-  @include rounded(2em);
+  border-radius: 2em;
   color:$color-1;
   &:hover{
     color:$color-neutral-0;
@@ -168,7 +170,7 @@
   background-color: transparent;
   border: 2px solid $color-neutral-0;
   padding:.5em 2em;
-  @include rounded(2em);
+  border-radius: 2em;
   color: $color-neutral-0;
   &:hover{
     text-decoration:none;
@@ -213,7 +215,7 @@ a:focus {
 }
 
 [class*='btn-']:hover, [class*='btn-']:active {
-  @include transition(all .5s ease);
+  transition: all .5s ease;
 }
 
 [class*='btn-'][disabled] {

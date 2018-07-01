@@ -1,0 +1,64 @@
+<div class="span-12 padding-standard min-height-100vh">
+  
+  <h1 class="span-12 padding-standard center-text">Caramello Camel Caser</h1>
+
+  <form ng-submit="submitContactForm()" 
+        class="span-12
+               center-horizontally
+               fancy-input-boxes 
+               margin-bottom-to-offset-footer
+               max-form-width">
+    <label class="block sm-margin-bottom">Name</label>
+    <input 
+      type="text" 
+      class="span-12 margin-bottom"
+      ng-model="contactForm.uname" />
+    
+    <label class="block sm-margin-bottom">Email (so I can respond if required)</label>
+    <input 
+      type="email" 
+      class="span-12 margin-bottom"
+      ng-model="contactForm.email" />
+    
+    <label class="block sm-margin-bottom">Message</label>
+    <textarea 
+      type="text"  
+      class="span-12 margin-bottom"
+      placeholder="Report an Issue, Request a Feature, or just say hi."
+      ng-model="userMessage">
+    </textarea>
+
+    <div ng-if="errorMessage" 
+         class="error-handling span-12 margin-bottom">
+         {{errorMessage}}
+    </div>
+    <div ng-if="successMessage" 
+         class="success-handling span-12 margin-bottom">
+         {{successMessage}}
+    </div>
+    <button class="btn-1 center-horizontally margin-bottom" 
+            type="submit"
+            ng-disabled="isSending">
+            Send message
+    </button>
+    <a ui-sref="camelCaser" class="btn-3 block center-horizontally">Return to Camel Caser</button>
+  </form>
+
+  <div class="span-12 footer">
+    <span class="span-6 
+                 padding-standard 
+                 md-screen 
+                 responsive-text">
+      <a href="http://aimeelally.com/" class="btn-3">© Aimée Lally 2018</a>
+    </span>
+    <span class="span-6 
+                 padding-standard 
+                 md-screen 
+                 responsive-text 
+                 text-right">
+      <a ui-sref="contact" class="btn-3">
+        Report an issue/Request a feature
+      </a>
+    </span>
+  </div>
+</div>

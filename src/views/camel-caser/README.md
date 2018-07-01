@@ -2,7 +2,7 @@
 This is the Caramello Camel Caser
 
 ##Features
-1. Standard camel caser which strips white spaces and capitalises first letter of every word EXCEPT first
+1. Standard camel caser which strips white spaces and capitalises first letter of every word EXCEPT first letter.
 
 ##Advanced features
 1. strip special characters
@@ -12,7 +12,6 @@ This is the Caramello Camel Caser
 5. allow for multiple lines
 6. return result as object
 7. copy to clipboard
-8. remember my selections
 
 ##Known issues
 - comments don't get parsed correctly because they have "<" symbols
