@@ -27,7 +27,20 @@
       placeholder="Report an Issue, Request a Feature, or just say hi."
       ng-model="userMessage">
     </textarea>
-    <button class="btn-1 center-horizontally margin-bottom" type="submit">Submit</button>
+
+    <div ng-if="errorMessage" 
+         class="error-handling span-12 margin-bottom">
+         {{errorMessage}}
+    </div>
+    <div ng-if="successMessage" 
+         class="success-handling span-12 margin-bottom">
+         {{successMessage}}
+    </div>
+    <button class="btn-1 center-horizontally margin-bottom" 
+            type="submit"
+            ng-disabled="isSending">
+            Submit
+    </button>
     <a ui-sref="camelCaser" class="btn-3 block center-horizontally">Return to Camel Caser</button>
   </form>
 

@@ -24,3 +24,9 @@ h5, h6, p { @include modular-font-size(1); }
 h1 {
   font-family: $font-title;
 }
+.success-handling {
+  color: $color-success;
+}
+.error-handling {
+  color: $color-alert;
+}
