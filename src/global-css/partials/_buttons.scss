@@ -90,6 +90,8 @@
 
 .btn-3{
   @extend %btn;
+  font-size: initial;
+  font-weight: initial;
   color: $color-neutral-5;
   border: none;
   background: none;

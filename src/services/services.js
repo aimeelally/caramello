@@ -3,10 +3,12 @@
 // directives with @es6 dependency injection
 import SampleService from './SampleService';
 import Caramel from '../classes/Caramel';
+import Contact from '../classes/Contact';
 
 //import BuilderService from './BuilderService';
 //export { default as BuilderService } from './BuilderService'; // as a service
 
 angular.module('services', [])
   .service('SampleService', SampleService)
-  .service('Caramel', Caramel);
+  .service('Caramel', Caramel)
+  .service('Contact', Contact);

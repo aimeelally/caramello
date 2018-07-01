@@ -68,13 +68,12 @@ angular.module("camelCaser", [])
         }
 
 
-        
-
         function turnInputAndOutputIntoObect(input, output) {
           var prettyObject = {[output]: input}; 
 
           return JSON.stringify(prettyObject, undefined, 2);
         }
+        
 
         function createMultilineObject(input) {
           

@@ -49,6 +49,9 @@ $grid-columns: 12;
   .span-3.md-screen{
     width:50%;
   }
+  .md-screen.responsive-text {
+    text-align: center;
+  }
 }
 
 @media (max-width: 400px){
@@ -63,6 +66,9 @@ $grid-columns: 12;
   }
   .span-2.sm-screen{
     width: 50%;
+  }
+  .sm-screen.responsive-text {
+    text-align: center;
   }
 }
 

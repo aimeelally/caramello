@@ -1,3 +1,26 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid $color-neutral-2;
+}
+
+.margin-bottom-to-offset-footer {
+  margin-bottom: 100px;
+}
+
+.min-height-100vh {
+  min-height: 100vh;
+}
+
+.max-form-width {
+  max-width: 600px;
+  textarea {
+    min-height: 100px;
+  }
+}
+
 // ****** margins ******
 
 .xsm-margin-bottom{
