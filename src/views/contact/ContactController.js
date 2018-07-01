@@ -47,7 +47,6 @@ angular.module("contact", [])
           return new Promise((resolve, reject) => {
             return Contact.sendMessage(form)
               .then(function(err) {
-                err = 'd';
                 return err ? reject(err) : resolve();
               });
           });

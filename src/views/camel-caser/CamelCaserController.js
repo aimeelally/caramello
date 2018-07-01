@@ -122,5 +122,3 @@ angular.module("camelCaser", [])
 			}
 		]
 	});
-	
-  //([!@#$%\/^&._,*])

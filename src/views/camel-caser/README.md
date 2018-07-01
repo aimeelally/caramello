@@ -12,7 +12,6 @@ This is the Caramello Camel Caser
 5. allow for multiple lines
 6. return result as object
 7. copy to clipboard
-8. remember my selections - not implemented
 
 ##Known issues
 - comments don't get parsed correctly because they have "<" symbols
